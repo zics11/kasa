@@ -4,17 +4,40 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 const CollapseContainer = styled.div`
+    width: ${(props) => props.width || '100%'};
+    margin: auto;
+
+`;
+
+const TitleElement = styled.div`
+    background-color: #FF6060;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 24px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
     position: relative;
-    width: 100%;
-    height: 223px;
+`;
+
+const DescriptionElement = styled.div`
+    background-color: #F6F6F6;
+    color: #FF6060;
+    border-radius: 5px;
+    padding: 15px 10px 10px 10px;
+    margin-top: -5px;
+    font-size: 18px;
+    font-weight: 400;
+
 `;
 
 const Rotate = styled(FontAwesomeIcon)`
-    transition: transform 0.3s; // Ajoutez une transition pour une animation fluide
-    transform: rotate(${(props) => props.rotate || '0deg'}); // Utilisez la variable rotate pour définir la rotation
+    transition: transform 0.3s; 
+    transform: rotate(${(props) => props.rotate || '0deg'});
+    padding-top: 0px;
 `;
 
-function Collapse() {
+function Collapse({ width, title, description }) {
     const [isOpen, setIsOpen] = useState(false);
     const [rotate, setRotate] = useState('0deg'); // Initialisez la variable de rotation
 
@@ -24,12 +47,16 @@ function Collapse() {
     };
 
     return (
-        <CollapseContainer>
-            <h2 onClick={toggleCollapse}>
-                Titre
+        <CollapseContainer width={width} >
+            <TitleElement onClick={toggleCollapse}>
+                {title}
                 <Rotate icon={faChevronUp} rotate={rotate} />
-            </h2>
-            {isOpen && <p>description</p>}
+            </TitleElement>
+            {isOpen && (
+                <DescriptionElement>
+                    <div dangerouslySetInnerHTML={{ __html: description }} />
+                </DescriptionElement>
+            )}
         </CollapseContainer>
     );
 }

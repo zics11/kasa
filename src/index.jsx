@@ -12,8 +12,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     div {
-        font-family: 'Trebuchet MS', Helvetica, sans-serif;
-    }
+      font-family: 'Montserrat', sans-serif;    }
 
     a {
       text-decoration: none;
@@ -35,7 +34,7 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/logement" element={<Logement />} />
+        <Route path="/logement/:idLogement" element={<Logement />} />
         <Route path="/propos" element={<Propos />} />
         <Route path="*" element={<Error />} />
       </Routes>

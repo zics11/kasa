@@ -24,7 +24,7 @@ const LogoHeader = styled.img`
 `
 const NavLinkStyled = styled(NavLink)`
     &.active {
-        text-decoration: underline; // Style des liens actifs
+        text-decoration: underline; 
     }
 `
 

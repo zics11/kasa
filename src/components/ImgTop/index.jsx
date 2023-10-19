@@ -5,6 +5,7 @@ const ImageContainer = styled.div`
     position: relative;
     width: 100%;
     height: 223px;
+    margin-bottom: 8px;
 `;
 
 const TextElement = styled.p`

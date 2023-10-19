@@ -36,7 +36,7 @@ function Home() {
           <VignetteLocation
             cover={cover}
             title={title}
-            key={id}
+            id={id}
           />
         ))}
 

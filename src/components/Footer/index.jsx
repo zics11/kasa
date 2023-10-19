@@ -13,6 +13,7 @@ const FooterContainer = styled.nav`
     align-items: center;
     justify-content: space-evenly;
     height: 209px;
+    margin-top: 50px;
 `
 const ImgFooter = styled.img`
 
