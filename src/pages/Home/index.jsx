@@ -13,15 +13,30 @@ const HomeContainer = styled.section`
     display: flex;
     flex-direction: column;
     gap: 43px;
+    @media (max-width: 375px) {
+      margin-top: 0px;
+      margin-bottom: 0px; 
+      width: 89.33%;
+      gap: 22px;
+    }
 `
 const LocationsContainer = styled.section`
-background-color: #F6F6F6;
-border-radius: 25px;
-padding: 50px;
-list-style-type: none;
-display: flex;
-flex-wrap: wrap;
-gap: 60px;`
+    background-color: #F6F6F6;
+    border-radius: 25px;
+    padding: 50px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    @media (max-width: 375px) {
+      background-color: white;
+      border-radius: 0px;
+      padding: 0px;
+      flex-direction: column;
+      gap: 22px;
+
+    }
+`
 
 function Home() {
   return (
@@ -34,6 +49,7 @@ function Home() {
       <LocationsContainer>
         {LocationList.map(({ id, cover, title }) => (
           <VignetteLocation
+            key={id}
             cover={cover}
             title={title}
             id={id}

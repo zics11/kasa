@@ -6,6 +6,14 @@ const ImageContainer = styled.div`
     width: 100%;
     height: 223px;
     margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media (max-width: 375px) {
+        height: 111px;
+        margin-bottom: 0px;
+
+    }
 `;
 
 const TextElement = styled.p`
@@ -14,13 +22,18 @@ const TextElement = styled.p`
     font-size: 48px;
     font-weight: 500;
     left: 0pX;
-    top : 0px;
     width: 100%;
     height: 100%;
     line-height: 223px;
     text-align: center;
-    
-
+    @media (max-width: 375px) {
+        line-height: 24px;
+        font-size: 24px;
+        text-align: left;
+        width: 217px;
+        height: 48px;
+        left: 20pX;
+    }
 
 `;
 
@@ -30,7 +43,9 @@ const ImageElement = styled.img`
     border-radius: 25px;
     filter: brightness(0.7);
     object-fit: cover;
-
+    @media (max-width: 375px) {
+        border-radius: 10px;
+    }
 `;
 
 function ImgTop({ src, alt, text }) {

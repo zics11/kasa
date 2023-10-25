@@ -6,7 +6,10 @@ const VignetteContainer = styled.li`
     width: 29.82%;
     height: 340px;
     position: relative;
-
+    @media (max-width: 375px) {
+        width: 100%;
+        height: 255px;
+    }
 `;
 
 const TextElement = styled.p`
@@ -37,9 +40,8 @@ const OverlayElement = styled.div`
 
 
 function VignetteLocation({ id, title, cover }) {
-    console.log(id)
     return (
-        <VignetteContainer key={id} >
+        <VignetteContainer  >
             <NavLink to={`/logement/${id}`}>
                 <ImageElement src={cover} alt={`${title} cover`} />
                 <OverlayElement></OverlayElement>

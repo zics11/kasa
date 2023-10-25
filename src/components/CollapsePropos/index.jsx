@@ -4,49 +4,40 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 const CollapseContainer = styled.div`
-    width: 100%;
-    `;
+    width: ${(props) => props.width || '100%'};
+    margin: auto;
+
+`;
 
 const TitleElement = styled.div`
     background-color: #FF6060;
     border-radius: 5px;
-    height: 52px;
-    padding: 0px 10px;
+    padding: 10px;
+    font-size: 24px;
     color: white;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     position: relative;
-    @media (max-width: 375px) {
-        height: 30px;
-    }
 `;
 
 const DescriptionElement = styled.div`
     background-color: #F6F6F6;
     color: #FF6060;
     border-radius: 5px;
-    padding: 25px 20px 20px 20px;
+    padding: 15px 10px 10px 10px;
     margin-top: -5px;
     font-size: 18px;
     font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    @media (max-width: 375px) {
-        font-size: 12px;
-    }
-`;
 
+`;
 
 const Rotate = styled(FontAwesomeIcon)`
     transition: transform 0.3s; 
     transform: rotate(${(props) => props.rotate || '0deg'});
     padding-top: 0px;
-    font-size: 16px;
 `;
 
-function Collapse({ title, description, list }) {
+function Collapse({ width, title, description }) {
     const [isOpen, setIsOpen] = useState(false);
     const [rotate, setRotate] = useState('0deg'); // Initialisez la variable de rotation
 
@@ -56,22 +47,14 @@ function Collapse({ title, description, list }) {
     };
 
     return (
-        <CollapseContainer >
+        <CollapseContainer width={width} >
             <TitleElement onClick={toggleCollapse}>
                 {title}
                 <Rotate icon={faChevronUp} rotate={rotate} />
             </TitleElement>
             {isOpen && (
                 <DescriptionElement>
-                    {list ? (
-                        description.map((item, index) => (
-                            <p key={index}>
-                                {item}
-                            </p>
-                        ))
-                    ) : (
-                        <p>{description}</p>
-                    )}
+                    <div dangerouslySetInnerHTML={{ __html: description }} />
                 </DescriptionElement>
             )}
         </CollapseContainer>

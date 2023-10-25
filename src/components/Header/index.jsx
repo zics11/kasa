@@ -10,6 +10,12 @@ const NavContainer = styled.nav`
     gap: 60px;
     display: flex;
     align-items: center;
+    @media (max-width: 375px) {
+        font-size: 12px;
+        gap: 20px;
+        text-transform: uppercase;
+
+    }
 `
 const HeaderContainer = styled.nav`
     width: 86.2%;
@@ -18,16 +24,22 @@ const HeaderContainer = styled.nav`
     margin-bottom: 50px; 
     display: flex;
     justify-content: space-between;
+    @media (max-width: 375px) {
+        margin-top: 20px;
+        margin-bottom: 25px; 
+    }
 `
 const LogoHeader = styled.img`
     height: 68px;
+    @media (max-width: 375px) {
+        height: 46.88px;
+    }
 `
 const NavLinkStyled = styled(NavLink)`
     &.active {
         text-decoration: underline; 
     }
 `
-
 
 function Header() {
     return (

@@ -11,14 +11,28 @@ const FooterContainer = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 29px;
     height: 209px;
     margin-top: 50px;
+    @media (max-width: 375px) {
+        font-size: 12px;
+        gap: 15px;
+        margin-top: 22px;
+    }
 `
 const ImgFooter = styled.img`
 
     width: 122px;
 `
+const TextFooter = styled.p`
+  @media (max-width: 375px) {
+    width: 122px;
+    text-align: center;
+    }
+    
+`
+
 
 
 
@@ -26,7 +40,7 @@ function Footer() {
     return (
         <FooterContainer>
             <ImgFooter src={logo} alt='kasa logo' />
-            <p>© 2020 Kasa. All rights reserved</p>
+            <TextFooter>© 2020 Kasa. All rights reserved</TextFooter>
 
         </FooterContainer>
     )
