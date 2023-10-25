@@ -42,11 +42,9 @@ const ButtonPrevElement = styled(FontAwesomeIcon)`
     color: white;
     cursor: grab;
     @media (max-width: 375px) {
-        height: 20px;
+        height: 24px;
         left: 6px;
     }
-
-
 `;
 
 const ButtonNextElement = styled(FontAwesomeIcon)`
@@ -56,11 +54,9 @@ const ButtonNextElement = styled(FontAwesomeIcon)`
     color: white;
     cursor: grab;
     @media (max-width: 375px) {
-        height: 20px;
+        height: 24px;
         right: 6px;
-
     }
-    
 `;
 
 const CounterElement = styled.p`
@@ -69,6 +65,11 @@ const CounterElement = styled.p`
     color: white;
     bottom: 25px;
     font-size: 18px;
+    @media (max-width: 375px) {
+        bottom: 6px;
+        font-size: 13px;
+
+    }
 `;
 
 
@@ -90,14 +91,10 @@ function Carrousel({ pictures }) {
     return (
         <CarrousselContainer >
             {pictures.map((image, index) => (
-                <>
-                    <SlideElement key={index} active={index === activeIndex}>
-                        <ImageElement src={image} alt={`Slide ${index}`} />
-                    <CounterElement>{index+1}/{pictures.length}</CounterElement>
-                    </SlideElement>
-                </>
-
-
+                <SlideElement key={index} active={index === activeIndex}>
+                    <ImageElement src={image} alt={`Slide ${index}`} />
+                    <CounterElement>{index + 1}/{pictures.length}</CounterElement>
+                </SlideElement>
             ))}
 
             {pictures.length > 1 && (

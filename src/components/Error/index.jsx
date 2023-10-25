@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import {React, useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 
 
@@ -49,6 +49,10 @@ const NavLinkStyled = styled(NavLink)`
 `;
 
 function Error() {
+    useEffect(() => {
+        document.title = `Kasa - 404, la page que vous demandez n'existe pas`
+      }, [])
+    
     return (
         <ErrorContainer>
             <TitleElement>404</TitleElement>

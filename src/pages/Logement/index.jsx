@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import {React, useEffect} from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import LocationList from '../../data/data.json';
 import Carrousel from '../../components/Carrousel';
@@ -122,6 +122,9 @@ const TagsElement = styled.span`
 function Logement() {
     const { idLogement } = useParams()
     const selectedLogement = LocationList.find((location) => location.id === idLogement);
+    useEffect(() => {
+        document.title = `Kasa - Logement`
+    }, [])
 
 
 

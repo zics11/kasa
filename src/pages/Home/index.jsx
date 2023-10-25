@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import { React, useEffect } from 'react';
 import ImgTop from "../../components/ImgTop";
 import Image from '../../assets/img-header.png';
 import VignetteLocation from '../../components/VignetteLocation';
@@ -39,6 +39,10 @@ const LocationsContainer = styled.section`
 `
 
 function Home() {
+  useEffect(() => {
+    document.title = `Kasa - Home`
+  }, [])
+
   return (
     <HomeContainer>
       <ImgTop

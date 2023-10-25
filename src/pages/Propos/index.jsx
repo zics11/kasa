@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import { React, useEffect } from 'react';
 import ImgTop from "../../components/ImgTop";
 import Image from '../../assets/img-header-propos.png';
 import Collapse from '../../components/Collapse';
@@ -36,6 +36,9 @@ const CollapseContainer = styled.section`
 `
 
 function Propos() {
+    useEffect(() => {
+        document.title = `Kasa - À propos`
+    }, [])
     return (
         <ProposContainer>
             <ImgTop
