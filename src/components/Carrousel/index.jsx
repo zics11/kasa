@@ -93,7 +93,6 @@ function Carrousel({ pictures }) {
             {pictures.map((image, index) => (
                 <SlideElement key={index} active={index === activeIndex}>
                     <ImageElement src={image} alt={`Slide ${index}`} />
-                    <CounterElement>{index + 1}/{pictures.length}</CounterElement>
                 </SlideElement>
             ))}
 
@@ -101,6 +100,8 @@ function Carrousel({ pictures }) {
                 <>
                     <ButtonPrevElement icon={faChevronLeft} onClick={prevSlide} />
                     <ButtonNextElement icon={faChevronRight} onClick={nextSlide} />
+                    <CounterElement>{activeIndex + 1}/{pictures.length}</CounterElement>
+
 
                 </>
             )}
