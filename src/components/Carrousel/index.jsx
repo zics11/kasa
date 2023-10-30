@@ -66,9 +66,7 @@ const CounterElement = styled.p`
     bottom: 25px;
     font-size: 18px;
     @media (max-width: 375px) {
-        bottom: 6px;
-        font-size: 13px;
-
+        display: none;
     }
 `;
 

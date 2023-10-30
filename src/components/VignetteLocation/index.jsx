@@ -21,6 +21,7 @@ const TextElement = styled.p`
     color: white;
 `;
 
+
 const ImageElement = styled.img`
     width: 100%;
     height: 100%;
@@ -45,7 +46,7 @@ function VignetteLocation({ id, title, cover }) {
             <NavLink to={`/logement/${id}`}>
                 <ImageElement src={cover} alt={`${title} cover`} />
                 <OverlayElement></OverlayElement>
-                <TextElement>{title}</TextElement>
+                <TextElement >{title}</TextElement>
             </NavLink>
         </VignetteContainer>
     );
